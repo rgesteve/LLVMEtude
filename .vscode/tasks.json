@@ -15,7 +15,8 @@
                 "options": {
                     "env": {
                         "vcvarsall": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat\"",
-                        "generator": "\"Visual Studio 15 2017 Win64\""
+                        "generator": "\"Visual Studio 15 2017 Win64\"",
+                        "LLVM_DIR" : "C:\\Users\\perf\\documents\\projects\\llvm-7.0.0.src\\build\\lib\\cmake\\llvm"
                     }
                 }
             },
