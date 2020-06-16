@@ -5,6 +5,7 @@
     "tasks" : [
         {
             "label": "Conf:Debug",
+            "dependsOn" : ["Clean"],
             "windows" : {
                 "type": "process",
                 "command": "cmd",
@@ -37,7 +38,7 @@
             },
             "problemMatcher": [],
             "group": "build"
-        }
+        },
         {
             "label" : "Clean",
             "windows" : {
