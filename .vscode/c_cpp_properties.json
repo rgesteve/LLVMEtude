@@ -4,7 +4,8 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "c:\\users\\perf\\documents\\projects\\llvm-7.0.0.src\\include"
+                "c:\\users\\perf\\documents\\projects\\llvm-7.0.0.src\\include",
+                "c:\\users\\perf\\documents\\projects\\llvm-7.0.0.src\\build\\include"
             ],
             "defines": [
                 "_DEBUG",
