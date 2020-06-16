@@ -1,0 +1,53 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version" : "2.0.0",
+    "tasks" : [
+        {
+            "label": "Conf:Debug",
+            "windows" : {
+                "type": "process",
+                "command": "cmd",
+                "args": [
+                    "/C %vcvarsall% && cmake -G %generator% -B ${workspaceFolder}/build -DCMAKE_BUILD_TYPE=DEBUG ${workspaceFolder}"
+                ],
+                "options": {
+                    "env": {
+                        "vcvarsall": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat\"",
+                        "generator": "\"Visual Studio 15 2017 Win64\""
+                    }
+                }
+            },
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "Build:Debug",
+            "windows" : {
+                "type": "process",
+                "command": "cmd",
+                "args": [
+                    "/C %vcvarsall% && cmake --build ${workspaceFolder}/build"
+                ],
+                "options": {
+                    "env": {
+                        "vcvarsall": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat\""
+                    }
+                }
+            },
+            "problemMatcher": [],
+            "group": "build"
+        }
+        {
+            "label" : "Clean",
+            "windows" : {
+                "command" : "powershell",
+                "args" : [
+                    "If (Test-Path -Path '${workspaceFolder}/build') { Remove-Item -Path '${workspaceFolder}/build' -Force -Recurse};"
+                ]
+            },
+            "problemMatcher" : [],
+            "group" : "build"
+        }
+    ]
+}
